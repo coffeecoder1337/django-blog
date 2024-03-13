@@ -1,0 +1,303 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+
+:root {
+	/*--color-accent: #f1b00f;*/
+	--color-accent: #ffd700;
+	--color-dark: #181818;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Arial';
+	
+
+}
+
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	height: 70px;
+	align-items: center;
+	background-color: var(--color-dark);
+	color: #fff;
+	padding-right: 30px;
+	padding-left: 30px;
+	opacity: .99;
+	/*margin-top: 10px;*/
+}
+
+.logo {
+	text-transform: uppercase;
+	font-size: 1.25em;
+	/*height: 100%;*/
+}
+
+.logo span {
+	color: var(--color-accent);
+}
+
+.logo img {
+	height: 100%;
+	width: 100%;
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	list-style: none;
+	font-size: 1.15em;
+}
+
+.menu-item {
+	/*padding: 10px;*/
+	padding-left: 10px;
+	padding-right: 10px;
+	text-decoration: none;
+	color: #fff;
+}
+
+.menu-item:hover {
+	color: var(--color-accent);
+	transition: .5s;
+}
+
+.login {
+	font-size: 1.2em;
+}
+
+.username {
+	text-decoration: none;
+	color: #fff;
+}
+
+.username:hover {
+	color: var(--color-accent);
+	transition: .5s;
+}
+
+.login-link {
+	color: #fff;
+	text-decoration: none;
+}
+
+.login-link:hover {
+	color: var(--color-accent);
+	transition: .3s;
+}
+
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+.posts{
+	width: 500px;
+	list-style-type: none;
+	margin-bottom: 30px;
+}
+
+.posts_post {
+	margin-top: 50px;
+	
+}
+
+.posts_post p {
+    max-width: 100%;
+}
+
+.posts_image img {
+    max-width: 500px;
+}
+
+.posts_title{
+	margin-bottom: 5px;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+}
+
+
+
+.read_post_btn {
+	text-align: right;
+}
+
+
+.categories_list {
+	background-color: var(--color-dark);
+	display: flex;
+	list-style: none;
+	justify-content: space-around;
+}
+
+
+
+.category a {
+	text-decoration: none;
+	color: #fff;
+}
+
+.category a:hover {
+	color: var(--color-accent);
+	transition: .5s;
+}
+
+.selected_category {
+	color: var(--color-accent);
+}
+
+.tags {
+    font-size: 20px;
+    display: flex;
+}
+
+.tags p {
+    margin-right: 5px;
+}
+
+.tags_list {
+    list-style: none;
+    display: flex;
+}
+
+.tag {
+    margin-right: 5px;
+}
+
+.tag a {
+    text-decoration: none;
+    color: var(--color-dark);
+}
+
+.tag a:hover {
+    color: var(--color-accent);
+    transition: 0.3s;
+}
+
+form {
+    margin-left: 20px;
+    color: var(--color-dark);
+    font: 'Arial';
+    font-size: 20px;
+}
+
+.form-field {
+    margin-bottom: 10px;
+}
+
+.form-label {
+    margin-right: 10px;
+}
+
+.post_image img {
+    max-width: 1200px;
+}
+
+
+.paginator_nav {
+	margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.paginator_list {
+	display: flex;
+	list-style: none;
+
+}
+.paginator_list li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 5px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+}
+
+.paginator_item {
+	background-color: var(--color-dark);
+}
+
+.paginator_item:hover {
+	background-color: #555;
+	transition: .3s;
+}
+
+.selected_paginator_item {
+	color: var(--color-dark);
+	border: 1px solid var(--color-dark);
+}
+
+.paginator_item a {
+	text-decoration: none;
+	color: #fff;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.login-input {
+	border-radius: 50px;
+	padding: 5px 10px;
+	font-size: 17px;
+	border: 1px solid var(--color-dark);
+	height: 20px;
+}
+
+.login-input:focus {
+	outline: none;
+}
+
+.form-button {
+	border-radius: 50px;
+	border: 0;
+	color: #fff;
+	font-size: 17px;
+	background-color: var(--color-dark);
+	width: 100%;
+	height: 40px;
+}
+
+.user-form {
+	text-align: center;
+	width: 450px;
+	margin-top: 50px;
+	background-color: #eee;
+	padding: 30px;
+	border-radius: 5px;
+}
+
+.form-field {
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-title {
+	margin-bottom: 30px;
+	color: var(--color-dark);
+	font-size: 30px;
+}
+
+.add-post-form {
+	width: 750px;
+}

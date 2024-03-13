@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block tags %}
+{% with post.tags.all as tags %}
+{% if tags %}
+<div class="tags">
+    <p>Tags: </p>
+    <ul class="tags_list">
+        {% for t in tags %}
+        <li class="tag"><a href="{{ t.get_absolute_url }}">{{ t.tag }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
+{% endwith %}
+{% endblock %}
+
+
+{% block content %}
+
+{% if perms.blog.change_posts %}
+<p class="edit_link"><a href="{% url 'edit_page' post.slug %}">Редактировать пост</a></p>
+{% endif %}
+
+<h1 class="post_title">{{ post.title }}</h1>
+{% if post.photo %}
+<p class="post_image"><img src="{{ post.photo.url }}" alt="photo"></p>
+{% endif %}
+<p class="post_content">{{ post.content }}</p>
+<p class="post_time_created">{{ post.time_created }}</p>
+<p class="post_time_updated">{{ post.time_updated }}</p>
+{% endblock %}

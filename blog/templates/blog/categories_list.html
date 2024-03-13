@@ -1,0 +1,9 @@
+{% for cat in cats %}
+{% if cat.posts.count > 0 %}
+    {% if cat.pk == selected_cat %}
+    <li class="selected_category">{{ cat.name }}</li>
+    {% else %}
+    <li class="category"><a href="{{ cat.get_absolute_url }}">{{ cat.name }}</a></li>
+    {% endif %}
+{% endif %}
+{% endfor %}

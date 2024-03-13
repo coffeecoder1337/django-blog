@@ -1,0 +1,10 @@
+{% if tags %}
+<div class="tags">
+    <p>Tags: </p>
+    <ul class="tags_list">
+        {% for t in tags %}
+        <li class="tag"><a href="{{ t.get_absolute_url }}">{{ t.tag }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

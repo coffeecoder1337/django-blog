@@ -1,0 +1,28 @@
+{% load static %}
+{% load blog_tags %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'blog/css/main.css' %}" type="text/css">
+	<title>{{ title }}</title>
+</head>
+<body>
+	{% include 'blog/include/header.html'%}
+	<ul class="categories_list">
+		{% show_categories selected_cat %}
+	</ul>
+
+	{% block tags %}
+	{% show_all_tags %}
+	{% endblock %}
+
+
+	{% block content %} {% endblock %}
+	
+
+	{% block navigation %} {% endblock %}
+</body>
+</html>

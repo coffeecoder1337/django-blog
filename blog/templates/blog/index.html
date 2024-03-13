@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<main>
+		<ul class="posts">
+			{% for post in posts %}
+			{% if post.is_published %}
+			<li class="posts_post">
+				{% if perms.blog.change_posts %}
+				<p class="edit_link"><a href="{% url 'edit_page' post.slug %}">Редактировать пост</a></p>
+				{% endif %}
+				<div class="posts_title">
+					<h3 class="posts_header">{{ post.title }}</h3>
+					<p class="author">Автор: {{ post.author.username|default:"Неизвестен" }}</p>
+				</div>
+
+				{% if post.photo %}
+				<p class="posts_image"><img src="{{ post.photo.url }}" alt=""></p>
+				{% endif %}
+				<p class="posts_content">{{ post.content|linebreaks|truncatewords:40 }}</p>
+				<p class="read_post_btn"><a href="{{ post.get_absolute_url }}">Read post</a></p>
+			</li>
+			{% endif %}
+			{% endfor %}
+		</ul>
+	</main>
+	
+{% endblock %}
+
+{% block navigation %}
+{% if page_obj.has_other_pages %}
+<nav class="paginator_nav">
+	<ul class="paginator_list">
+		{% if page_obj.has_previous %}
+		<li class="paginator_item">
+			<a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+		</li>
+		{% endif %}
+
+		{% for p in paginator.page_range %}
+		{% if page_obj.number == p %}
+		<li class="selected_paginator_item">{{ p }}</li>
+		{% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+		<li class="paginator_item">
+			<a href="?page={{ p }}">{{ p }}</a>
+		</li>
+		{% endif %}
+		{% endfor %}
+
+		{% if page_obj.has_next %}
+		<li class="paginator_item">
+			<a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+		</li>
+		{% endif %}
+
+	</ul>
+</nav>
+{% endif %}
+{% endblock %}
