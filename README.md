@@ -1,5 +1,7 @@
 # Блог на Django
 
+![Иллюстрация к проекту](https://raw.githubusercontent.com/coffeecoder1337/django-blog/main/rmimg/pkelZcfWZoQ.jpg)
+
 # Функционал сайта
 
 - Регистрация/авторизация пользователей по логину/email и паролю
